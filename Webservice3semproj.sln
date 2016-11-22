@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{30465942-69F0-47B7-A4DD-4C6FD55AEC2F}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\mere skolesjav\første år løste c# opgaver og andet skolesjav\SWC 2 semester\.gitattributes = ..\..\mere skolesjav\første år løste c# opgaver og andet skolesjav\SWC 2 semester\.gitattributes
-		..\..\mere skolesjav\første år løste c# opgaver og andet skolesjav\SWC 2 semester\.gitignore = ..\..\mere skolesjav\første år løste c# opgaver og andet skolesjav\SWC 2 semester\.gitignore
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EviromentWebservice", "EviromentWebservice\EviromentWebservice.csproj", "{83811C64-E6CC-480D-86B8-58A6FA9CBDDA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{46179EC9-B785-4F0D-B20E-41D5A3A648B0}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
