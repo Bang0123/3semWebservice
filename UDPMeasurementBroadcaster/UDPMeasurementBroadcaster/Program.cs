@@ -13,21 +13,24 @@ namespace UDPMeasurementSender
     {
         static void Main(string[] args)
         {
-            IPAddress ip = IPAddress.Parse("127.0.0.1"); //
-
-
-            UdpClient udpSender = new UdpClient("192.168.6.138", 8080); //
+            //IPAddress ip = IPAddress.Parse("127.0.0.1"); //
+            //UdpClient udpSender = new UdpClient("192.168.6.138", 8080); //
 
             NameGenerator generator = new NameGenerator();
 
             while (true)
             {
-                string measurment = generator.randomname();
-                Byte[] sendBytes = Encoding.ASCII.GetBytes(measurment);
+                Measurement measurement = generator.randomname(201);
+                Measurement measurement2 = generator.randomname(203);
+
+
+
+                //Byte[] sendBytes = Encoding.ASCII.GetBytes(measurment);
                 try
                 {
-
-                    udpSender.Send(sendBytes, sendBytes.Length);//,RemoteIpEndPoint);
+                    Task.Run(async () => await ApiClient.Post("http://eviromentwebservice.azurewebsites.net/", "api/measurements", measurement));
+                    Task.Run(async () => await ApiClient.Post("http://eviromentwebservice.azurewebsites.net/", "api/measurements", measurement2));
+                    //udpSender.Send(sendBytes, sendBytes.Length);//,RemoteIpEndPoint);
                 }
                 catch (Exception e)
                 {
@@ -35,8 +38,9 @@ namespace UDPMeasurementSender
                 }
 
 
-                Console.WriteLine(measurment);
-                Thread.Sleep(300);
+                Console.WriteLine("measurement: " + measurement);
+                Console.WriteLine("measurement2: " + measurement2);
+                Thread.Sleep(3000);
             }
 
         }

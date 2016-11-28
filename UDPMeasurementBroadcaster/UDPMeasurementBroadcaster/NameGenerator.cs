@@ -41,11 +41,12 @@ namespace UDPMeasurementSender
                 "Lokale:201:Temp:23:Lyd:65:Lys:400"
             };
 
-        public string randomname()
+        public Measurement randomname(int lokalenr)
         {
-            int index = new Random().Next(readings201.Count);
-            string measurement = readings201[index];
-            return measurement;
+            Random rng = new Random();
+            //  string measurement = readings201[index];
+            Measurement tempMeasurement = new Measurement(lokalenr, rng.Next(56, 80), rng.Next(200, 600), rng.Next(18, 24));
+            return tempMeasurement;
         }
     }
 }
