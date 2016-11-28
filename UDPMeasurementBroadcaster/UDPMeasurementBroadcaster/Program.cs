@@ -40,7 +40,8 @@ namespace UDPMeasurementSender
 
                 Console.WriteLine("measurement: " + measurement);
                 Console.WriteLine("measurement2: " + measurement2);
-                Thread.Sleep(3000);
+                Thread.Sleep(TimeSpan.FromMinutes(10).Milliseconds);
+                
             }
 
         }
