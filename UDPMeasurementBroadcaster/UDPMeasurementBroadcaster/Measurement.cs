@@ -25,6 +25,11 @@ namespace UDPMeasurementSender
             Tid = DateTime.Now;
             ID = 0;
         }
+
+        public override string ToString()
+        {
+            return $"LokaleId: {LokaleId}, ID: {ID}, Tid: {Tid}, Lyd: {Lyd}, Lys: {Lys}, Temp: {Temp}";
+        }
     }
 
     
