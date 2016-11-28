@@ -6,7 +6,8 @@
 *.user
 *.userosscache
 *.sln.docstates
-v14/
+.vs/Webservice3sempro/v14/
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
