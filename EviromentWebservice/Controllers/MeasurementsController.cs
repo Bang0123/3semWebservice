@@ -36,6 +36,26 @@ namespace EviromentWebservice.Controllers
             return Ok(measurement);
         }
 
+        // GET: api/Measurements/2011-02-17
+        [HttpGet]
+        [Route("{dt:datetime:regex(\\d{4}-\\d{2}-\\d{2})}")]
+        [ResponseType(typeof(Measurement))]
+        public async Task<IHttpActionResult> GetMeasurementFromDate(DateTime dt)
+        {
+            var task = await Task.Run(() =>
+            {
+                var measurement = db.Measurements.Where(m => dt.Date > m.Tid.Date && dt.Date < m.Tid.Date);
+                return measurement;
+            });
+            
+            if (task == null || !task.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(task);
+        }
+
         // PUT: api/Measurements/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutMeasurement(int id, Measurement measurement)
