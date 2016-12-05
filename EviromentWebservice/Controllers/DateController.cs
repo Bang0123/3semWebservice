@@ -28,7 +28,7 @@ namespace EviromentWebservice.Controllers
                 return measurement;
             });
 
-            if (task == null)
+            if (task == null || task.Count() < 1)
             {
                 return NotFound();
             }
