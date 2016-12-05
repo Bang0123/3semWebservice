@@ -23,9 +23,7 @@ namespace UDPMeasurementSender
                 Measurement measurement = generator.randomname(201);
                 Measurement measurement2 = generator.randomname(203);
 
-
-
-                //Byte[] sendBytes = Encoding.ASCII.GetBytes(measurment);
+               //Byte[] sendBytes = Encoding.ASCII.GetBytes(measurment);
                 try
                 {
                     Task.Run(async () => await ApiClient.Post("http://eviromentwebservice.azurewebsites.net/", "api/measurements", measurement));
@@ -40,7 +38,8 @@ namespace UDPMeasurementSender
 
                 Console.WriteLine("measurement: " + measurement);
                 Console.WriteLine("measurement2: " + measurement2);
-                Thread.Sleep(TimeSpan.FromMinutes(10).Milliseconds);
+                Thread.Sleep(TimeSpan.FromMinutes(10));
+               
                 
             }
 
